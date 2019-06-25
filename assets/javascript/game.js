@@ -46,7 +46,7 @@ var userGuess = event.key.toLowerCase();
         if (randomWord.match(userGuess)) {
 
 // create var whereLetterIs to store index location of where userGuess matches
-            var whereLetterIs = randomWord.match(userGuess).index;
+            var whereLetterIs = randomWord.search(userGuess);
             console.log(whereLetterIs);
 
 // use splice method to place userGuess at location in whereLetterIs, and remove previous _
@@ -55,6 +55,8 @@ var userGuess = event.key.toLowerCase();
 // display on .html and log to console
             currentWordText.textContent = randomWordLetterArray;
             console.log(randomWordLetterArray);
+
+            //if (randomWordLetterArray.
 
         } else {
 
@@ -76,3 +78,6 @@ var userGuess = event.key.toLowerCase();
     }
 }
 
+var str = "Visit W3Schools!";
+var n = str.search("3");
+console.log(n);
