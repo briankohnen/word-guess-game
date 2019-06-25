@@ -59,6 +59,25 @@ var userGuess = event.key.toLowerCase();
                 return;
             } else {
                 console.log("you win");
+                wins++;
+                userWinsText.textContent = wins;
+                randomWord = allWords[Math.floor(Math.random() * allWords.length)];
+                console.log(randomWord);
+                randomWordLetterArray = [];
+
+                for (var i = 0; i < randomWord.length; i++) {
+                randomWordLetterArray.push(" _ ");
+                }
+
+                currentWordText.textContent = randomWordLetterArray;
+
+                guessLeft = 6;
+                guessLeftText.textContent = guessLeft;
+
+                allLettersGuessed = [];
+                lettersGuessedText.textContent = allLettersGuessed; 
+
+
             }
 
         } else {
@@ -77,36 +96,6 @@ var userGuess = event.key.toLowerCase();
     }
 
     else {
-        lettersGuessedText.textContent = "LOSER";
+        lettersGuessedText.textContent = "LOSER, refresh to start again!";
     }
 }
-// if ((randomWordLetterArray[0] === randomWord.charAt(0)) && (randomWordLetterArray[1] === randomWord.charAt(1)) && 
-//             (randomWordLetterArray[2] === randomWord.charAt(2)) && (randomWordLetterArray[3] === randomWord.charAt(3)) && 
-//             (randomWordLetterArray[4] === randomWord.charAt(4)) && (randomWordLetterArray[5] === randomWord.charAt(5)) && 
-//             (randomWordLetterArray[6] === randomWord.charAt(6)) && (randomWordLetterArray[7] === randomWord.charAt(7)) &&
-//             (randomWordLetterArray[8] === randomWord.charAt(8)) && (randomWordLetterArray[9] === randomWord.charAt(9)) && 
-//             (randomWordLetterArray[10] === randomWord.charAt(10)) && (randomWordLetterArray[11] === randomWord.charAt(11)) && 
-//             (randomWordLetterArray[12] === randomWord.charAt(12)) && (randomWordLetterArray[13] === randomWord.charAt(13)) && 
-//             (randomWordLetterArray[14] === randomWord.charAt(14))) {
-//                 console.log("win");
-//             }
-console.log(randomWordLetterArray[2]);
-console.log(randomWord.charAt(2));
-
-// for (var i = 0; i < randomWordLetterArray.length; i++) {
-//     if (randomWordLetterArray.includes(randomWord.charAt(i))) {
-//         console.log("win");
-//     }
-// }
-
-//for (var i = 0; i < randomWord.length; i++) {
-   // if ((randomWordLetterArray[i] === randomWord.charAt(i)) 
-    //&& (randomWordLetterArray[1] === randomWord.charAt(1)) && 
-    //(randomWordLetterArray[2] === randomWord.charAt(2))) {
-   // console.log("win");
-
-// if (randomWordLetterArray.includes(" _ ")) {
-//     return;
-// } else {
-//     console.log("you win");
-// }
