@@ -49,7 +49,7 @@ var userGuess = event.key.toLowerCase();
             var whereLetterIs = randomWord.search(userGuess);
 
 // use splice method to place userGuess at location in whereLetterIs, and remove previous _
-            randomWordLetterArray.splice(whereLetterIs, 1, userGuess);
+            randomWordLetterArray.splice(whereLetterIs, 1, " " + userGuess + " ");
 
 // display on .html and log to console
             currentWordText.textContent = randomWordLetterArray;
