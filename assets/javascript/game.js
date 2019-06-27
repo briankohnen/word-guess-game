@@ -38,6 +38,8 @@ currentWordText.textContent = randomWordLetterArray;
 // Creating an array to store user's guessed letters
 var allLettersGuessed = [];
 
+randomWordLetterArray = randomWord.split("");
+            console.log(randomWordLetterArray);
 
 // Key press function
 document.onkeyup = function(event) {
@@ -53,42 +55,38 @@ var userGuess = event.key.toLowerCase();
         if (randomWord.match(userGuess)) {
 
 // create var whereLetterIs to store index location of where userGuess matches
-            var whereLetterIs = randomWord.search(userGuess);
-            console.log(whereLetterIs);
+            var whereLetterIs = randomWord.indexOf([userGuess]);
 
 // use splice method to place userGuess at location in whereLetterIs, and remove previous _
             randomWordLetterArray.splice(whereLetterIs, 1 , " " + userGuess + " ");
-                if (randomWordLetterArray.includes(" " + userGuess + " ")) {
-                        randomWord.search(userGuess + 1);
-                }
 
 // display on .html and log to console
             currentWordText.textContent = randomWordLetterArray;
 
 // conditional statement if randomWordLetterArray does not contain " _ " user wins
-            if (randomWordLetterArray.includes(" _ ")) {
-                return;
-            } else {
-                console.log("you win");
-                wins++;
-                userWinsText.textContent = wins;
-                randomWord = allWords[Math.floor(Math.random() * allWords.length)];
-                console.log(randomWord);
-                randomWordLetterArray = [];
-                for (var i = 0; i < randomWord.length; i++) {
-                randomWordLetterArray.push(" _ ");
-                }
+            // if (randomWordLetterArray.includes(" _ ")) {
+            //     return;
+            // } else {
+            //     console.log("you win");
+            //     wins++;
+            //     userWinsText.textContent = wins;
+            //     randomWord = allWords[Math.floor(Math.random() * allWords.length)];
+            //     console.log(randomWord);
+            //     randomWordLetterArray = [];
+            //     for (var i = 0; i < randomWord.length; i++) {
+            //     randomWordLetterArray.push(" _ ");
+            //     }
 
-                currentWordText.textContent = randomWordLetterArray;
+            //     currentWordText.textContent = randomWordLetterArray;
 
-                guessLeft = 6;
-                guessLeftText.textContent = guessLeft;
+            //     guessLeft = 6;
+            //     guessLeftText.textContent = guessLeft;
 
-                allLettersGuessed = [];
-                lettersGuessedText.textContent = allLettersGuessed; 
+            //     allLettersGuessed = [];
+            //     lettersGuessedText.textContent = allLettersGuessed; 
 
 
-            }
+            // }
 
         } else {
 
